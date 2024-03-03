@@ -1,0 +1,24 @@
+cabal-version:   3.0
+name:            simple-html
+version:         0.1.0.0
+license:         NONE
+author:          Jaro Reinders
+maintainer:      jaro.reinders@gmail.com
+build-type:      Simple
+extra-doc-files: CHANGELOG.md
+
+common warnings
+    ghc-options: -Wall
+    default-language: GHC2021
+    build-depends:    base
+
+library
+    import:           warnings
+    exposed-modules:  Lib
+    hs-source-dirs:   src
+
+executable simple-html
+    import:           warnings
+    main-is:          Main.hs
+    hs-source-dirs:   app
+    build-depends:    simple-html, bytestring, network, network-run
